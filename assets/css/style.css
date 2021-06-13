@@ -1,0 +1,110 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+  --blue: #31326F;
+  --white: #DBF6E9;
+  --yellow: #FFC93C;
+  --blue-green: #9DDFD3;
+  --red: #BD4F4F;
+  --black: #000000;
+  --red-hover: #a32121;
+  --blue-hover: #1d1f70;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFC93C 13.47%, #31326F 100%);
+}
+
+
+
+.container {
+  height: 60vh;
+}
+
+.footer {
+  padding: 0;
+  background-color: transparent;
+}
+
+.t-margin {
+  padding: 125px 0 0 0;
+}
+
+.button-me {
+  color: var(--black);
+  background-color: var(--white);
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-me:hover{
+  background-color: var(--blue-hover);
+  color: var(--white);
+}
+
+.btn-delete {
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.btn-delete:hover {
+  background-color:var(--red-hover);
+}
+
+.btn-color-selected {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-vinc {
+  color: var(--black);
+  background-color: var(--blue-green);
+}
+
+.table {
+  border-radius: 20px;
+}
+
+.columns {
+  width: 100%;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.is-white{
+  color: var(--white);
+}
+
+.is-black{
+  color: var(--black);
+}
+
+.is-red {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.is-yellow {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+
+.cards {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
