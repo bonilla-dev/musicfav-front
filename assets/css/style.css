@@ -102,6 +102,13 @@ body {
   background-color: var(--yellow);
 }
 
+.is-green {
+  color: var(--white);
+  background-color: var(--blue-green);
+  padding: 12px 30px;
+  border-radius: 10px;
+}
+
 .cards {
   width: 150px;
   height: 150px;

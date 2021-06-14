@@ -16,24 +16,45 @@
           <div
             class="column is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
           >
-            <figure class="image is-64x64 mb-4">
+            <figure class="image is-64x64 mb-4 mt-6">
               <img class="is-rounded" src="@/assets/spotifylogo.jpg" />
             </figure>
-            <button class="button-me btn-color-selected" @click="vincularSpotify">Vincular</button>
-            <button class="btn-delete is-red" v-if="!isActive">Desvincular</button>
+            <a
+              class="button-me btn-color-selected"
+              :href="`https://musicfav-api.herokuapp.com/users/${user._id}/spotify`"
+              v-if="isActiveSpotify"
+            >Vincular</a>
+            <h3 class="is-green" v-if="!isActiveSpotify">Vinculada</h3>
           </div>
           <div
             class="column is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
           >
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <span style="font-size: 2em; color: Tomato;">
+                  <i class="fas fa-info-circle"></i>
+                </span>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                    <h3 class="subtitle">
+                      Para que youtube funcione necesitas crear una playlist con el nombre
+                      <strong>Favorite</strong>.
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
             <figure class="image is-64x64 mb-4">
               <img class="is-rounded" src="@/assets/youtubelogo.jpg" />
             </figure>
-            <button
+            <a
               class="button-me btn-color-selected"
-              v-if="isActive"
-              @click="vincularYoutube"
-            >Vincular</button>
-            <button class="btn-delete is-red" v-if="!isActive">Desvincular</button>
+              v-if="isActiveYoutube"
+              :href="`https://musicfav-api.herokuapp.com/users/${user._id}/youtube`"
+            >Vincular</a>
+            <h3 class="is-green" v-if="!isActiveYoutube">Vinculada</h3>
           </div>
         </div>
       </div>
@@ -58,7 +79,8 @@ export default {
   },
   data() {
     return {
-      isActive: true
+      isActiveYoutube: true,
+      isActiveSpotify: true
     };
   },
   computed: {
@@ -66,24 +88,23 @@ export default {
       return this.$store.state.user;
     }
   },
-  methods: {
-    async vincularSpotify() {
-      console.log(this.user._id)
-      let config = {
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      };
-      const response = await this.$axios.$get(
-        `/users/${this.user._id}/spotify`, config
-      );
-      console.log(response);
-    },
-    async vincularYoutube() {
-      const response = await this.$axios.$get(
-        `/users/${this.user._id}/youtube`
-      );
-      console.log(response);
+  async beforeMount() {
+    const token = this.$store.state.token;
+    const config = {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    };
+    const userFound = await this.$axios.get(
+      `https://musicfav-api.herokuapp.com/users/${this.user._id}`,
+      config
+    );
+    console.log(userFound.data);
+    if (userFound.data.platforms.includes("Youtube")) {
+      this.isActiveYoutube = false;
+    }
+    if (userFound.data.platforms.includes("Spotify")) {
+      this.isActiveSpotify = false;
     }
   }
 };

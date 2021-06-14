@@ -45,7 +45,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://musicfav-api.herokuapp.com',
+    // baseURL: 'https://musicfav-api.herokuapp.com',
     // proxyHeaders: false,
     // credentials: true
   },
