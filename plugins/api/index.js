@@ -4,8 +4,6 @@ import User from './resources/users'
 
 export default (context, inject) => {
   axios.defaults.baseURL = context.env.baseURL
-
-  console.info(context.store)
   inject('api', {
     auth: new Auth(axios),
     users: new User(axios),
