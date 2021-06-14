@@ -9,10 +9,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"}
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" }
     ],
     script: [
-      {src:"https://kit.fontawesome.com/f83e7f3154.js", crossorigin: "anonymous" }
+      { src: "https://kit.fontawesome.com/f83e7f3154.js", crossorigin: "anonymous" }
     ]
   },
 
@@ -24,7 +24,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api/index',
-    {src: '~/plugins/vue-cookie-law', mode: 'client'}
+    { src: '~/plugins/vue-cookie-law', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,7 +44,11 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://musicfav-api.herokuapp.com',
+    // proxyHeaders: false,
+    // credentials: true
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -57,7 +61,6 @@ export default {
   env: {
     baseURL: 'https://musicfav-api.herokuapp.com'
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
