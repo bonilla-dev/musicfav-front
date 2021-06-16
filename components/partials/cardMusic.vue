@@ -8,9 +8,10 @@
             <p class="title is-4">{{value.author}}</p>
             <p class="subtitle is-6">{{value.title}}</p>
           </div>
-          <a :href="`${value.preview_url}`" class="mt-6 mr-4 is-black">
-            <i class="fas fa-play"></i>
+         <a :href="`${value.preview_url}`" class="mt-6 mr-4 is-black">
+          <i class="fas fa-play"></i>
           </a>
+          <audio :src="`${value.preview_url}`"></audio>
         </div>
           <img :src="`${value.platform}`" :alt="`${value.title} de ${value.author}`" width="30%" />
       </div>

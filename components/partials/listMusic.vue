@@ -42,7 +42,7 @@ export default {
       }
     };
     await this.$axios.$delete(`https://musicfav-api.herokuapp.com/users/${userId}/songs/${songId}`, config)
-      this.$nuxt.refresh()
+      location.reload();
        }catch(error) {
          return error.message
        }
