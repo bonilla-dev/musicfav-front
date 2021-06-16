@@ -16,6 +16,7 @@
     "core-js": "^3.9.1",
     "jwt-decode": "^3.1.2",
     "nuxt": "^2.15.3",
-    "vue-cookie-law": "^1.13.3"
+    "vue-cookie-law": "^1.13.3",
+    "vue-youtube-embed": "^2.2.2"
   }
 }

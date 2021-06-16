@@ -24,7 +24,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api/index',
-    { src: '~/plugins/vue-cookie-law', mode: 'client' }
+    { src: '~/plugins/vue-cookie-law', mode: 'client' },
+    { src: '@/plugins/youtube.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,7 +40,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
+
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
