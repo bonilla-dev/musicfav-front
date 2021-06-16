@@ -2,7 +2,7 @@
   <div class="container">
     <div class="is-flex is-align-items-center is-justify-content-center pt-6 pb-2">
       <figure class="image is-96x96">
-        <img src="@/assets/logo.svg" />
+        <img src="@/assets/logo.png" />
       </figure>
       <h3 class="ml-4 title is-2">MUSICFAV</h3>
     </div>
@@ -10,7 +10,8 @@
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
-          <input v-model="email" class="input" type="text" placeholder="Introduzca su email" />
+          <input v-model="email" class="input" type="text" placeholder="Introduzca su email"
+          @click="hasErrors=false" />
         </div>
       </div>
 
@@ -22,6 +23,7 @@
             class="input"
             type="password"
             placeholder="Introduzca su contraseña"
+            @click="hasErrors=false"
           />
         </div>
       </div>
