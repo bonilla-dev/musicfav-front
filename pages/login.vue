@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class="is-flex is-align-items-center is-justify-content-center pl-6 pt-6 pb-4">
+    <div class="is-flex is-align-items-center is-justify-content-center pt-6 pb-2">
       <figure class="image is-96x96">
         <img src="@/assets/logo.svg" />
       </figure>
-      <h3 class="ml-4 title">MUSICFAV</h3>
+      <h3 class="ml-4 title is-2">MUSICFAV</h3>
     </div>
     <div class="container is-flex is-flex-direction-column is-justify-content-center m-6">
       <div class="field">
@@ -29,9 +29,19 @@
         <div class="message-body" v-html="errorMessage"></div>
       </article>
       <button class="mt-4 has-text-centered button-me is-yellow" @click="login">Login</button>
-      <div class="is-flex m-4 is-justify-content-space-evenly">
-      <nuxt-link to="/register" class="is-black" >¿Aún no tienes cuenta?<strong> Click Áqui</strong></nuxt-link>
-      <nuxt-link to="/forgot-password" class="is-black">¿Olvidaste tu contraseña?<strong> Click Áqui</strong></nuxt-link>
+      <div class="mobile-text is-flex m-4 is-justify-content-space-evenly">
+        <nuxt-link to="/register" class="is-black">
+          <p>
+            ¿Aún no tienes cuenta?
+            <strong>Click Áqui</strong>
+          </p>
+        </nuxt-link>
+        <nuxt-link to="/forgot-password" class="is-black">
+          <p>
+            ¿Olvidaste tu contraseña?
+            <strong>Click Áqui</strong>
+          </p>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -40,10 +50,10 @@
 <script>
 export default {
   name: "LoginPage",
-  head(){
+  head() {
     return {
-      title: 'Login'
-    }
+      title: "Login"
+    };
   },
   data() {
     return {

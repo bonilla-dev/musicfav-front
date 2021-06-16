@@ -40,6 +40,9 @@ export default {
     Footer
   },
   async beforeMount() {
+    if(!this.$store.state.user) {
+      this.$router.push('/')
+    }
     const userId = this.$store.state.user._id
     const token = this.$store.state.token;
     const config = {
