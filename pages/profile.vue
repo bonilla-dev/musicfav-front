@@ -24,8 +24,7 @@
               :href="`https://musicfav-api.herokuapp.com/users/${user._id}/spotify`"
               v-if="isActiveSpotify"
             >Vincular</a>
-            <h3 class="is-green" v-if="!isActiveSpotify">Vinculada</h3>
-            <a class="button is-success mt-2" :href="`https://musicfav-api.herokuapp.com/users/${user._id}/spotify`" v-if="!isActiveSpotify"><i class="fas fa-sync-alt"> Recargar Musica</i></a>
+            <a class="button is-success mt-2" :href="`https://musicfav-api.herokuapp.com/users/${user._id}/spotify`" v-if="!isActiveSpotify"><i class="fas fa-plus-circle"> Añadir otra cuenta</i></a>
           </div>
           <div
             class="column is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
@@ -55,8 +54,7 @@
               v-if="isActiveYoutube"
               :href="`https://musicfav-api.herokuapp.com/users/${user._id}/youtube`"
             >Vincular</a>
-            <h3 class="is-green" v-if="!isActiveYoutube">Vinculada</h3>
-            <a class="button is-success mt-2" :href="`https://musicfav-api.herokuapp.com/users/${user._id}/youtube`" v-if="!isActiveSpotify" ><i class="fas fa-sync-alt"> Recargar Musica</i></a>
+            <a class="button is-success mt-2" :href="`https://musicfav-api.herokuapp.com/users/${user._id}/youtube`" v-if="!isActiveSpotify" ><i class="fas fa-plus-circle"> Añadir otra cuenta</i></a>
           </div>
         </div>
       </div>
